@@ -94,7 +94,20 @@ document.addEventListener("DOMContentLoaded", () => {
     load_question();
 });
 
+function prev_question(){
+  if (question_number > 0){
+    --question_number;
+    load_question();
+  }
+}
+
 function load_question() {
+  if (question_number > 0){
+      document.querySelector("#backBtn").style.display = "block";
+    }
+    else{
+      document.querySelector("#backBtn").style.display = "none"
+    }
     document.querySelector("#main").classList.remove('show');
     void document.querySelector("#main").offsetWidth;
     document.querySelector("#main").classList.add('show');
