@@ -1,3 +1,4 @@
+"use strict";
 const questions = [
   `<h3>
   هل شعرت بأحد هذه الأعراض:
@@ -64,11 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function load_question() {
+    document.querySelector("#main").classList.remove('show');
+    void document.querySelector("#main").offsetWidth;
+    document.querySelector("#main").classList.add('show');
     document.querySelector("#question").innerHTML = questions[question_number];
-
     document.querySelectorAll(".option").forEach(option => {
         option.onclick = () => {
             if (option.value == "yes" & question_number != 4) {
+                document.querySelector("#main").classList.remove('show');
+                void document.querySelector("#main").offsetWidth;
+                document.querySelector("#main").classList.add('show');
                 document.querySelector("#main").innerHTML = `
                 <ul class="mt-5">
                 <li>
@@ -93,6 +99,9 @@ function load_question() {
               load_question();
             }
             else {
+              document.querySelector("#main").classList.remove('show');
+              void document.querySelector("#main").offsetWidth;
+              document.querySelector("#main").classList.add('show');
               document.querySelector("#main").innerHTML = `
               <ul class="mt-5">
               <li>
