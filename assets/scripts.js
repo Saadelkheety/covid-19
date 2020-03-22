@@ -103,7 +103,7 @@ function prev_question(){
 
 function load_question() {
   if (question_number > 0){
-      document.querySelector("#backBtn").style.display = "block";
+      document.querySelector("#backBtn").style.display = "inline";
     }
     else{
       document.querySelector("#backBtn").style.display = "none"
