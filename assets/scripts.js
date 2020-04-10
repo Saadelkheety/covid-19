@@ -129,7 +129,7 @@ function load_question() {
             if (option.value == "yes") {
                 answers[question_number] = 1;
 
-                if((question_number > 1 & question_number < 6) | (answers[6] & answers[7])){
+                if((question_number > 1 && question_number < 6) || (answers[6] && answers[7])){
                   question_number++;
                   document.querySelector("#main").classList.remove('show');
                   void document.querySelector("#main").offsetWidth;
@@ -146,7 +146,7 @@ function load_question() {
             else if (option.value == "no") {
               answers[question_number] = 0;
 
-              if((answers[0] == 0 & answers[1] == 0) | (question_number == 6 | question_number == 7)){
+              if((answers[0] == 0 && answers[1] == 0) || (question_number == 6 || question_number == 7)){
                 question_number++;
                 document.querySelector("#main").classList.remove('show');
                 void document.querySelector("#main").offsetWidth;
